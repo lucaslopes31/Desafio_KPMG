@@ -36444,9 +36444,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_pagination, {
     data: $setup.students,
-    align: "center",
-    "show-disabled": "true",
-    onPaginationChangePage: $setup.getStudents
+    "show-disabled": true,
+    onPaginationChangePage: $setup.getStudents,
+    align: "center"
   }, {
     "prev-nav": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_16];

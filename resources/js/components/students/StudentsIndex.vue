@@ -48,7 +48,7 @@
     </div>
 
     <div class="my-4">
-        <pagination :data="students" align="center" show-disabled=true @pagination-change-page="getStudents">
+        <pagination :data="students" :show-disabled=true @pagination-change-page="getStudents" align="center">
             <template #prev-nav>
                 <i class="fa-solid fa-chevron-left"></i>
             </template>
