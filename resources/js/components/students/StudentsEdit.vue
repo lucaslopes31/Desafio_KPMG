@@ -22,7 +22,7 @@
                 <form @submit.prevent="saveStudent">
                     <div class="form-group mb-3">
                         <label for="matricula">Matrícula</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a matrícula" v-model="student.matricula">
+                        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a matrícula" v-model="student.matricula" v-mask="'####'">
                     </div>
 
                     <div class="form-group mb-3">
