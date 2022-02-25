@@ -15,7 +15,7 @@ return [
     'attributes'           => [
         'cpf'   => '"CPF"',
         'matricula' => '"Matrícula"',
-        'email' => '"E-mail"'
+        'email' => '"E‑mail"'
     ],
     'accepted'             => 'O campo :attribute deve ser aceito.',
     'accepted_if'          => 'O :attribute deve ser aceito quando :other for :value.',

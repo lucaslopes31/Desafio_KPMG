@@ -5,27 +5,32 @@ import {
 } from 'vue';
 import router from './router'
 
-import StudentsIndex from './components/students/StudentsIndex.vue';
-import {
-    FontAwesomeIcon
-} from '@fortawesome/vue-fontawesome';
+import StudentsIndex from './components/students/StudentsIndex.vue'
 import {
     library
-} from "@fortawesome/fontawesome-svg-core";
+} from "@fortawesome/fontawesome-svg-core"
 import {
     faChevronLeft,
-    faChevronRight
-} from "@fortawesome/free-solid-svg-icons";
-import { dom } from "@fortawesome/fontawesome-svg-core";
-dom.watch();
+    faChevronRight,
+    faCircleCheck,
+    faClose,
+    faPenToSquare,
+    faPlus,
+    faSpinner,
+    faTrash,
+    faTriangleExclamation
+} from "@fortawesome/free-solid-svg-icons"
+import {
+    FontAwesomeIcon
+} from '@fortawesome/vue-fontawesome'
 
-library.add(faChevronLeft, faChevronRight);
+library.add(faChevronLeft, faChevronRight, faSpinner, faClose, faPenToSquare, faTrash, faPlus, faCircleCheck, faTriangleExclamation)
 
 createApp({
         components: {
-            StudentsIndex,
+            StudentsIndex
         }
     })
-    .use(router)
     .component('font-awesome-icon', FontAwesomeIcon)
+    .use(router)
     .mount('#app')

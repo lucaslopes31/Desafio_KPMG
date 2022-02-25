@@ -16,7 +16,8 @@
                 </nav>
 
                 <div class="alert alert-danger" v-if="errors !== ''">
-                    <p class="m-0">{{ errors }}</p>
+                    <font-awesome-icon icon="triangle-exclamation" size="lg" class="me-2" />
+                    <span>{{ errors }}</span>
                 </div>
 
                 <form @submit.prevent="saveStudent">
@@ -35,7 +36,7 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail" v-model="student.email">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary shadow-none">
                         Atualizar
                     </button>
                 </form>

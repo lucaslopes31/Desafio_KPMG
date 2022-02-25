@@ -1,28 +1,52 @@
 <template>
-    <div class="alert alert-success" v-if="message !== ''">
-        <p class="m-0">{{ message }}</p>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" v-if="message !== ''">
+        <font-awesome-icon icon="circle-check" size="lg" class="me-2" />
+        <span>{{ message }}</span>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"></span>
+        </button>
     </div>
     <div class="mb-md-5 mb-4 text-end">
-        <router-link :to="{ name: 'students.create' }" class="btn btn-primary text-white text-uppercase">Cadastrar Estudante</router-link>
+        <router-link :to="{ name: 'students.create' }" class="btn btn-primary shadow-none text-white">
+            <font-awesome-icon icon="plus" />
+            Cadastrar Estudante
+        </router-link>
     </div>
     <div class="table-responsive">
         <table class="border w-100 text-center">
             <thead>
                 <tr>
-                    <th class="p-3">
+                    <th class="p-3 w-25">
                         <span class="text-uppercase">Matrícula</span>
                     </th>
-                    <th class="p-3">
+                    <th class="p-3 w-25">
                         <span class="text-uppercase">CPF</span>
                     </th>
-                    <th class="p-3">
+                    <th class="p-3 w-25">
                         <span class="text-uppercase">E-mail</span>
+                    </th>
+                    <th class="p-3 w-25">
+                        <span class="text-uppercase"></span>
                     </th>
                 </tr>
             </thead>
 
             <tbody class="">
-                <template v-for="item in students.data" :key="item.id">
+                <template v-if="!students.data">
+                    <tr class="border">
+                        <td class="p-3 text-truncate" colspan="4">
+                            <font-awesome-icon icon="spinner" spin size="2x" />
+                        </td>
+                    </tr>
+                </template>
+                <template v-else-if="!students.data.length">
+                    <tr class="border">
+                        <td class="p-3 text-truncate" colspan="4">
+                            Nenhum registro cadastrado no sistema.
+                        </td>
+                    </tr>
+                </template>
+                <template v-else v-for="item in students.data" :key="item.id">
                     <tr class="border">
                         <td class="p-3 text-truncate">
                             {{ item.matricula }}
@@ -34,10 +58,12 @@
                             {{ item.email }}
                         </td>
                         <td class="p-3 text-truncate">
-                            <router-link :to="{ name: 'students.edit', params: { id: item.id } }" class="btn btn-secondary text-uppercase me-2">
+                            <router-link :to="{ name: 'students.edit', params: { id: item.id } }" class="btn btn-secondary shadow-none me-2">
+                                <font-awesome-icon icon="pen-to-square" />
                                 Editar
                             </router-link>
-                            <button @click="deleteStudent(item.id)" class="btn btn-danger text-uppercase">
+                            <button @click="deleteStudent(item.id)" class="btn btn-danger shadow-none">
+                                <font-awesome-icon icon="trash" />
                                 Excluir
                             </button>
                         </td>
@@ -50,10 +76,10 @@
     <div class="my-4">
         <pagination :data="students" :show-disabled=true @pagination-change-page="getStudents" align="center">
             <template #prev-nav>
-                <i class="fa-solid fa-chevron-left"></i>
+                <font-awesome-icon icon="chevron-left" />
             </template>
             <template #next-nav>
-                <i class="fa-solid fa-chevron-right"></i>
+                <font-awesome-icon icon="chevron-right" />
             </template>
         </pagination>
     </div>
@@ -69,6 +95,7 @@
     } from "vue";
 
     import pagination from "laravel-vue-pagination";
+    import alert from "bootstrap";
 
     export default {
         components: {
