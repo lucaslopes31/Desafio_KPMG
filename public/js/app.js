@@ -35939,7 +35939,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _composables_students__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../composables/students */ "./resources/js/composables/students.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.es.js");
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -35948,7 +35947,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 // Here we're using a Composable file here, its code is above
  // onMounted will define what method to "fire" automatically
-
 
 
 

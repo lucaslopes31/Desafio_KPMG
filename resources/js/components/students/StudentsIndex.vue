@@ -95,7 +95,6 @@
     } from "vue";
 
     import pagination from "laravel-vue-pagination";
-    import alert from "bootstrap";
 
     export default {
         components: {
